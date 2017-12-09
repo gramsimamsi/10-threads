@@ -1,0 +1,327 @@
+<resources>
+    <string name="app_name">10-threads</string>
+    <string name="order_queue_label">Order queue</string>
+    <string name="kitchen_hitch_fill_level_label">Kitchen hitch fill level</string>
+    <string name="cooks_busy_label">Cook(s) busy:</string>
+    <string name="waiters_busy_label">Waiter(s) busy:</string>
+    <string-array name="page_sizes">
+        <item>1</item>
+        <item>5</item>
+        <item>10</item>
+        <item>20</item>
+        <item>50</item>
+    </string-array>
+    <string-array name="adjectives">
+        <item>Admiring</item>
+        <item>Adoring</item>
+        <item>Affectionate</item>
+        <item>Agitated</item>
+        <item>Amazing</item>
+        <item>Angry</item>
+        <item>Awesome</item>
+        <item>Blissful</item>
+        <item>Boring</item>
+        <item>Brave</item>
+        <item>Clever</item>
+        <item>Cocky</item>
+        <item>Compassionate</item>
+        <item>Competent</item>
+        <item>Condescending</item>
+        <item>Confident</item>
+        <item>Cranky</item>
+        <item>Dazzling</item>
+        <item>Determined</item>
+        <item>Distracted</item>
+        <item>Dreamy</item>
+        <item>Eager</item>
+        <item>Ecstatic</item>
+        <item>Elastic</item>
+        <item>Elated</item>
+        <item>Elegant</item>
+        <item>Eloquent</item>
+        <item>Epic</item>
+        <item>Fervent</item>
+        <item>Festive</item>
+        <item>Flamboyant</item>
+        <item>Focused</item>
+        <item>Friendly</item>
+        <item>Frosty</item>
+        <item>Gallant</item>
+        <item>Gifted</item>
+        <item>Goofy</item>
+        <item>Gracious</item>
+        <item>Happy</item>
+        <item>Hardcore</item>
+        <item>Heuristic</item>
+        <item>Hopeful</item>
+        <item>Hungry</item>
+        <item>Infallible</item>
+        <item>Inspiring</item>
+        <item>Jolly</item>
+        <item>Jovial</item>
+        <item>Keen</item>
+        <item>Kind</item>
+        <item>Laughing</item>
+        <item>Loving</item>
+        <item>Lucid</item>
+        <item>Mystifying</item>
+        <item>Modest</item>
+        <item>Musing</item>
+        <item>Naughty</item>
+        <item>Nervous</item>
+        <item>Nifty</item>
+        <item>Nostalgic</item>
+        <item>Objective</item>
+        <item>Optimistic</item>
+        <item>Peaceful</item>
+        <item>Pedantic</item>
+        <item>Pensive</item>
+        <item>Practical</item>
+        <item>Priceless</item>
+        <item>Quirky</item>
+        <item>Quizzical</item>
+        <item>Relaxed</item>
+        <item>Reverent</item>
+        <item>Romantic</item>
+        <item>Sad</item>
+        <item>Serene</item>
+        <item>Sharp</item>
+        <item>Silly</item>
+        <item>Sleepy</item>
+        <item>Stoic</item>
+        <item>Stupefied</item>
+        <item>Suspicious</item>
+        <item>Tender</item>
+        <item>Thirsty</item>
+        <item>Trusting</item>
+        <item>Unruffled</item>
+        <item>Upbeat</item>
+        <item>Vibrant</item>
+        <item>Vigilant</item>
+        <item>Vigorous</item>
+        <item>Wizardly</item>
+        <item>Wonderful</item>
+        <item>Xenodochial</item>
+        <item>Youthful</item>
+        <item>Zealous</item>
+        <item>Zen</item>
+    </string-array>
+    <string-array name="names">
+        <item>Albattani</item>
+        <item>Allen</item>
+        <item>Almeida</item>
+        <item>Agnesi</item>
+        <item>Archimedes</item>
+        <item>Ardinghelli</item>
+        <item>Aryabhata</item>
+        <item>Austin</item>
+        <item>Babbage</item>
+        <item>Banach</item>
+        <item>Bardeen</item>
+        <item>Bartik</item>
+        <item>Bassi</item>
+        <item>Beaver</item>
+        <item>Bell</item>
+        <item>Benz</item>
+        <item>Bhabha</item>
+        <item>Bhaskara</item>
+        <item>Blackwell</item>
+        <item>Bohr</item>
+        <item>Booth</item>
+        <item>Borg</item>
+        <item>Bose</item>
+        <item>Boyd</item>
+        <item>Brahmagupta</item>
+        <item>Brattain</item>
+        <item>Brown</item>
+        <item>Carson</item>
+        <item>Chandrasekhar</item>
+        <item>Chatterjee</item>
+        <item>Shannon</item>
+        <item>Clarke</item>
+        <item>Colden</item>
+        <item>Cori</item>
+        <item>Cray</item>
+        <item>Curran</item>
+        <item>Curie</item>
+        <item>Darwin</item>
+        <item>Davinci</item>
+        <item>Dijkstra</item>
+        <item>Dubinsky</item>
+        <item>Easley</item>
+        <item>Edison</item>
+        <item>Einstein</item>
+        <item>Elion</item>
+        <item>Engelbart</item>
+        <item>Euclid</item>
+        <item>Euler</item>
+        <item>Fermat</item>
+        <item>Fermi</item>
+        <item>Feynman</item>
+        <item>Franklin</item>
+        <item>Galileo</item>
+        <item>Gates</item>
+        <item>Goldberg</item>
+        <item>Goldstine</item>
+        <item>Goldwasser</item>
+        <item>Golick</item>
+        <item>Goodall</item>
+        <item>Haibt</item>
+        <item>Hamilton</item>
+        <item>Hawking</item>
+        <item>Heisenberg</item>
+        <item>Hermann</item>
+        <item>Heyrovsky</item>
+        <item>Hodgkin</item>
+        <item>Hoover</item>
+        <item>Hopper</item>
+        <item>Hugle</item>
+        <item>Hypatia</item>
+        <item>Jackson</item>
+        <item>Jang</item>
+        <item>Jennings</item>
+        <item>Jepsen</item>
+        <item>Johnson</item>
+        <item>Joliot</item>
+        <item>Jones</item>
+        <item>Kalam</item>
+        <item>Kare</item>
+        <item>Keller</item>
+        <item>Kepler</item>
+        <item>Khorana</item>
+        <item>Kilby</item>
+        <item>Kirch</item>
+        <item>Knuth</item>
+        <item>Kowalevski</item>
+        <item>Lalande</item>
+        <item>Lamarr</item>
+        <item>Lamport</item>
+        <item>Leakey</item>
+        <item>Leavitt</item>
+        <item>Lewin</item>
+        <item>Lichterman</item>
+        <item>Liskov</item>
+        <item>Lovelace</item>
+        <item>Lumiere</item>
+        <item>Mahavira</item>
+        <item>Mayer</item>
+        <item>Mccarthy</item>
+        <item>Mcclintock</item>
+        <item>Mclean</item>
+        <item>Mcnulty</item>
+        <item>Meitner</item>
+        <item>Meninsky</item>
+        <item>Mestorf</item>
+        <item>Minsky</item>
+        <item>Mirzakhani</item>
+        <item>Morse</item>
+        <item>Murdock</item>
+        <item>Neumann</item>
+        <item>Newton</item>
+        <item>Nightingale</item>
+        <item>Nobel</item>
+        <item>Noether</item>
+        <item>Northcutt</item>
+        <item>Noyce</item>
+        <item>Panini</item>
+        <item>Pare</item>
+        <item>Pasteur</item>
+        <item>Payne</item>
+        <item>Perlman</item>
+        <item>Pike</item>
+        <item>Poincare</item>
+        <item>Poitras</item>
+        <item>Ptolemy</item>
+        <item>Raman</item>
+        <item>Ramanujan</item>
+        <item>Ride</item>
+        <item>Montalcini</item>
+        <item>Ritchie</item>
+        <item>Roentgen</item>
+        <item>Rosalind</item>
+        <item>Saha</item>
+        <item>Sammet</item>
+        <item>Shaw</item>
+        <item>Shirley</item>
+        <item>Shockley</item>
+        <item>Sinoussi</item>
+        <item>Snyder</item>
+        <item>Spence</item>
+        <item>Stallman</item>
+        <item>Stonebraker</item>
+        <item>Swanson</item>
+        <item>Swartz</item>
+        <item>Swirles</item>
+        <item>Tereshkova</item>
+        <item>Tesla</item>
+        <item>Thompson</item>
+        <item>Torvalds</item>
+        <item>Turing</item>
+        <item>Varahamihira</item>
+        <item>Vaughan</item>
+        <item>Visvesvaraya</item>
+        <item>Volhard</item>
+        <item>Villani</item>
+        <item>Wescoff</item>
+        <item>Wiles</item>
+        <item>Williams</item>
+        <item>Wilson</item>
+        <item>Wing</item>
+        <item>Wozniak</item>
+        <item>Wright</item>
+        <item>Yalow</item>
+        <item>Yonath</item>
+    </string-array>
+    <string-array name="dishes">
+        <item>Key lime pie</item>
+        <item>Tater tots</item>
+        <item>San Francisco sourdough bread</item>
+        <item>Cobb salad</item>
+        <item>Pot roast</item>
+        <item>Twinkies</item>
+        <item>Jerky</item>
+        <item>Fajitas</item>
+        <item>Banana Split</item>
+        <item>Cornbread</item>
+        <item>GORP</item>
+        <item>Jambalaya</item>
+        <item>Biscuits 'n' gravy</item>
+        <item>Smithfield ham</item>
+        <item>Chicken fried steak</item>
+        <item>Wild Alaska salmon</item>
+        <item>California roll</item>
+        <item>Meatloaf</item>
+        <item>Grits</item>
+        <item>Macaroni and cheese</item>
+        <item>Maryland crabcakes</item>
+        <item>Potato chips</item>
+        <item>Cioppino</item>
+        <item>Fortune cookies</item>
+        <item>Peanut butter sandwich</item>
+        <item>Baked beans</item>
+        <item>Popcorn</item>
+        <item>Fried chicken and waffles</item>
+        <item>New England clam chowder</item>
+        <item>New Mexican flat enchiladas</item>
+        <item>S'mores</item>
+        <item>Lobster rolls</item>
+        <item>Buffalo wings</item>
+        <item>Indian frybread</item>
+        <item>Barbecue ribs</item>
+        <item>BLT</item>
+        <item>Apple pie</item>
+        <item>Frito pie</item>
+        <item>Po' boy</item>
+        <item>Green chile stew</item>
+        <item>Chocolate-chip cookies</item>
+        <item>Blueberry cobbler</item>
+        <item>Delmonico's steak</item>
+        <item>Chicago-style pizza</item>
+        <item>Nachos</item>
+        <item>Philly cheese steak</item>
+        <item>Hot dogs</item>
+        <item>Reuben sandwich</item>
+        <item>Cheeseburger</item>
+        <item>Thanksgiving dinner</item>
+    </string-array>
+</resources>

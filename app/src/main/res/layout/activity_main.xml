@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="de.fhro.inf.prg3.a10.MainActivity">
+
+    <TextView
+        android:id="@+id/order_queue_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/order_queue_label"
+        android:layout_marginStart="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.github.lzyzsd.circleprogress.CircleProgress
+        android:id="@+id/order_queue_progress"
+        android:layout_marginStart="16dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:circle_progress="100"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/order_queue_text"/>
+
+    <TextView
+        android:id="@+id/kitchen_hatch_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/kitchen_hitch_fill_level_label"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.github.lzyzsd.circleprogress.CircleProgress
+        android:id="@+id/kitchen_hatch_progress"
+        android:layout_marginEnd="16dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:circle_progress="0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/kitchen_hatch_text"/>
+
+    <TextView
+        android:id="@+id/kitchen_busy_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cooks_busy_label"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/order_queue_progress" />
+
+    <ProgressBar
+        android:id="@+id/kitchen_busy_indicator"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        style="?android:attr/progressBarStyle"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/kitchen_busy_text"/>
+
+    <TextView
+        android:id="@+id/waiter_busy_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/waiters_busy_label"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/kitchen_hatch_progress" />
+
+    <ProgressBar
+        android:id="@+id/waiter_busy_indicator"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        style="?android:attr/progressBarStyle"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/waiter_busy_text"/>
+
+</android.support.constraint.ConstraintLayout>
