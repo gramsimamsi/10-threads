@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
                 .createProgressReporter();
 
 
-        /* TODO create the cooks and waiters, pass the kitchen hatch instance and start them */
+        /* TODO create the cooks and waiters, pass the kitchen hatch and the reporter instance and start them */
 
     }
 }

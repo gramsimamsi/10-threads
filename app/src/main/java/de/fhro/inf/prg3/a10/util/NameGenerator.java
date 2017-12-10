@@ -11,6 +11,8 @@ import java.util.Random;
 import de.fhro.inf.prg3.a10.R;
 
 /**
+ * Random cook and waiter name generator
+ * furthermore it provides a method to get a random dish name
  * @author Peter Kurfer
  */
 
@@ -48,6 +50,10 @@ public class NameGenerator {
         return String.format("%s %s", randomAdjective, randomName);
     }
 
+    /**
+     * Get a name of random dish
+     * @return random dish name
+     */
     public String getDishName(){
         return dishNames.get(random.nextInt(dishNames.size() - 1));
     }

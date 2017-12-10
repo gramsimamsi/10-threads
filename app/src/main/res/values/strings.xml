@@ -4,13 +4,6 @@
     <string name="kitchen_hitch_fill_level_label">Kitchen hitch fill level</string>
     <string name="cooks_busy_label">Cook(s) busy:</string>
     <string name="waiters_busy_label">Waiter(s) busy:</string>
-    <string-array name="page_sizes">
-        <item>1</item>
-        <item>5</item>
-        <item>10</item>
-        <item>20</item>
-        <item>50</item>
-    </string-array>
     <string-array name="adjectives">
         <item>Admiring</item>
         <item>Adoring</item>

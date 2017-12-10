@@ -18,13 +18,23 @@ public final class Dish {
 
     public Dish(String mealDescription) {
         this.mealName = mealDescription;
+
+        /* calculate a random cooking time between 600 and round about 2500 */
         this.cookingTime = (int)(Math.random() * MULTIPLIER * (double) mealDescription.length() + MINIMUM_COOK_TIME);
     }
 
+    /**
+     * Get the time required to cook this dish
+     * @return time in ms
+     */
     public final int getCookingTime() {
         return cookingTime;
     }
 
+    /**
+     * Get the name of the dish
+     * @return name
+     */
     public final String getMealName() {
         return mealName;
     }
