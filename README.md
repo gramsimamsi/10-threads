@@ -85,4 +85,6 @@ The last call in the `run()` method, right before exiting, should be `progressRe
 The class `ProgressReporter` is given, too.
 It handles the interaction with the elements mentioned above.
 If you're using multithreading in graphical applications you have to take care which thread is accessing the graphical elements.
-As this course is not meant to be an introduction to programming of graphical user interfaces (this is covered in the course GUI in the 4th semester) the required coding is already done and abstracted in the 
+As this course is not meant to be an introduction to programming of graphical user interfaces (this is covered in the course GUI in the 4th semester) the required coding is already done and abstracted in the class `ProgressReporter`.
+
+The instance of the `ProgressReporter` is constructed by a so called "Builder" (you already used one with Retrofit and GSON) in the class `MainActivity` and you don't have to care about it there.
