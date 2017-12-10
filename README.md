@@ -88,3 +88,11 @@ If you're using multithreading in graphical applications you have to take care w
 As this course is not meant to be an introduction to programming of graphical user interfaces (this is covered in the course GUI in the 4th semester) the required coding is already done and abstracted in the class `ProgressReporter`.
 
 The instance of the `ProgressReporter` is constructed by a so called "Builder" (you already used one with Retrofit and GSON) in the class `MainActivity` and you don't have to care about it there.
+
+The class has 3 methods you have to use:
+
+* `updateProgress()` called whenever a cook or waiter has completed one step to display the changes in the progress bars (`OrderQueueProgress` and `KitchenHatchProgress`)
+* `notifyCookLeaving()` called whenever a cook thread is finished to enable the `ProgressReporter` to remove the `KitchenBusyIndicator` when all cooks are finished
+* `notifyWaiterLeaving()` called whenever a waiter thread is finished to enable the `ProgressReporter` to remove the `WaiterBusyIndicator` when all waiters are finished.
+
+_Details for the interested: every view element has to inherit the `View` class of Android. This class has a method `post()` which accepts also a `Runnable`. The passed `Runnable` is then executed in the GUI thread (or main thread). In this mannor it's safe to access the GUI elements from another thread because the actual access happens in the gui thread._
