@@ -41,10 +41,10 @@ The following UML describes the already given interface `KitchenHatch` and the c
 _Note that the UML is **not** complete! It's meant for orientation. You will need some more private fields._
 
 1. Implement the given interface methods
-1. The kitchen hatch is fixed sized to a discrete capacity. If the hatch is full the cooks have to wait until a waiter has removed (dequeued) a dish from hatch.
-1. If the kitchen hatch is empty a waiter has to wait because it does not know if the cooks are just lazy or if all orders are completed.
-1. When all orders are completed the cooks can go home. The waiters can go home when all orders are completed and all dishes are served to the guests.
-1. Use a `Dequeue<>` for storing the dishes. As you might know there are synchronized data structures like `BlockingQueue<>` but in this assignment you should make your hands dirty and do the synchronization yourself to understand the concepts so don't use them.
+1. The kitchen hatch is fixed sized to a discrete capacity. If the hatch is full the cooks have to wait until a waiter has removed (dequeued) a dish from the hatch.
+1. If the kitchen hatch is empty a waiter has to wait because it does not know if the cooks are just lazy or if all orders are processed.
+1. When all orders are completed the cooks can go home. The waiters can go home when all orders are completed **and** all dishes are served to the guests.
+1. Use a `Dequeue<>` for storing the dishes (`Dequeue<>` is implemented by `LinkedList<>`). As you might know there are synchronized data structures like `BlockingQueue<>` in the JDK but in this assignment you should make your hands dirty and do the synchronization yourself to understand the concepts so don't use them.
 
 ## Threads - `Cook` and `Waiter`
 
@@ -54,14 +54,14 @@ The following UML is meant as orientation how to implement the `Cook` class.
 
 ![Cook spec](./assets/images/Cook.svg)
 
-The class `Cook` has to implement the interface `Runnable` (which is already present in the JDK!) as every `Runnable` may be passed to a Thread.
+The class `Cook` has to implement the interface `Runnable` (which is already present in the JDK!) as every `Runnable` may be passed to a thread.
 
 Furthermore a cook needs a reference to the `KitchenHatch` instance (to dequeue orders and to enqueue prepared dishes) and a reference to the `ProgressReporter` (more on this later).
 
 In the `run()` method the cook has to dequeue orders until all orders are processed.
 When an order is retrieved the cook hast to create a `Dish` and prepare it by waiting the required `cookingTime` by calling `Thread.sleep(dish.getCookingTime())`.
 
-To display the progress call the method `updateProgress()` on the instance of `ProgressUpdater` to ensure that the `OrderQueueProgress` is up-to-date.
+To display the progress call the method `updateProgress()` on the instance of `ProgressUpdater` at the end of your loop to ensure that the `OrderQueueProgress` is up-to-date.
 The last statement in the `run()` method should be `progressReporter.notifyCookLeaving()`. This enables the `ProgressReporter` to remove the `KitchenBusyIndicator` when all `Cook` Threads are completed.
 
 ### `Waiter`
@@ -80,14 +80,24 @@ When the dish is served update the UI by calling the `updateProgress()` method o
 
 The last call in the `run()` method, right before exiting, should be `progressReporter.notifyWaiterLeaving()` to enable the `ProgressReporter` to remove the `WaiterBusyIndicator` when all waiters are finished.
 
-### `ProgressReporter`
+## Starting the threads
 
-The class `ProgressReporter` is given, too.
-It handles the interaction with the elements mentioned above.
+There are 2 **TODO** items in the `MainActivity` class:
+
+At the first one you have to create an instance of your `KitchHatchImpl` and assign it to the existing variable `kitchenHatch`.
+
+At the second one you have to spawn the threads.
+That means you have to create as many cooks and waiters as specified in the constants `COOKS_COUNT` and `WAITERS_COUNT` and pass each of them to a new `Thread` which can be started immediately.
+Alternatively you can start them all at once by collecting them first in an `ArrayList<>` and iterating this list when you have created all threads.
+
+## `ProgressReporter`
+
+The class `ProgressReporter` is given.
+It handles the interaction with the GUI elements mentioned above.
 If you're using multithreading in graphical applications you have to take care which thread is accessing the graphical elements.
 As this course is not meant to be an introduction to programming of graphical user interfaces (this is covered in the course GUI in the 4th semester) the required coding is already done and abstracted in the class `ProgressReporter`.
 
-The instance of the `ProgressReporter` is constructed by a so called "Builder" (you already used one with Retrofit and GSON) in the class `MainActivity` and you don't have to care about it there.
+The instance of `ProgressReporter` is constructed by a so called "Builder" (you already used one with Retrofit and GSON) in the class `MainActivity` so you don't have to care about it.
 
 The class has 3 methods you have to use:
 
@@ -95,4 +105,4 @@ The class has 3 methods you have to use:
 * `notifyCookLeaving()` called whenever a cook thread is finished to enable the `ProgressReporter` to remove the `KitchenBusyIndicator` when all cooks are finished
 * `notifyWaiterLeaving()` called whenever a waiter thread is finished to enable the `ProgressReporter` to remove the `WaiterBusyIndicator` when all waiters are finished.
 
-_Details for the interested: every view element has to inherit the `View` class of Android. This class has a method `post()` which accepts also a `Runnable`. The passed `Runnable` is then executed in the GUI thread (or main thread). In this mannor it's safe to access the GUI elements from another thread because the actual access happens in the gui thread._
+_Details for the interested: every view element has to inherit the `View` class of Android. This class has a method `post()` which accepts a `Runnable`. The passed `Runnable` is then executed in the GUI thread (or main thread). In this mannor it's safe to access the GUI elements from another thread because the actual access happens in the GUI thread._
