@@ -11,7 +11,7 @@ This assignment covers the basics of multithreading in Java:
 
 You will implement a cook who prepares dishes and a waiter who is serving them to the guests.
 These two components have to share data as the prepared dishes have to be available to the waiters.
-To accomplish this you will implement a kitch hatch where the cooks place the prepared dishes and the waiters can fetch them.
+To accomplish this you will implement a kitchen hatch where the cooks place the prepared dishes and the waiters can fetch them.
 
 ## Setup
 
@@ -36,7 +36,7 @@ The numbers in the picture are referencing the following elements:
 
 The following UML describes the already given interface `KitchenHatch` and the class `KitchenHatchImpl` you have to implement:
 
-![Kitch hatch](./assets/images/KitchenHatch.svg)
+![Kitchen hatch](./assets/images/KitchenHatch.svg)
 
 _Note that the UML is **not** complete! It's meant for orientation. You will need some more private fields._
 
@@ -74,7 +74,7 @@ The class `Waiter` has to implement the interface `Runnable` as well.
 It also needs the same references as the cook to dequeue completed dishes and to update the UI.
 
 In the `run()` method the waiter has to dequeue the completed dishes.
-Aftewards the waiter has to serve the dish.
+Afterwards the waiter has to serve the dish.
 To simulate that call `Thread.sleep()` with a random time (between 0 and 1000ms).
 When the dish is served update the UI by calling the `updateProgress()` method on the `ProgressReporter` instance.
 
@@ -84,7 +84,7 @@ The last call in the `run()` method, right before exiting, should be `progressRe
 
 There are 2 **TODO** items in the `MainActivity` class:
 
-At the first one you have to create an instance of your `KitchHatchImpl` and assign it to the existing variable `kitchenHatch`.
+At the first one you have to create an instance of your `KitchenHatchImpl` and assign it to the existing variable `kitchenHatch`.
 
 At the second one you have to spawn the threads.
 That means you have to create as many cooks and waiters as specified in the constants `COOKS_COUNT` and `WAITERS_COUNT` and pass each of them to a new `Thread` which can be started immediately.
@@ -105,4 +105,4 @@ The class has 3 methods you have to use:
 * `notifyCookLeaving()` called whenever a cook thread is finished to enable the `ProgressReporter` to remove the `KitchenBusyIndicator` when all cooks are finished
 * `notifyWaiterLeaving()` called whenever a waiter thread is finished to enable the `ProgressReporter` to remove the `WaiterBusyIndicator` when all waiters are finished.
 
-_Details for the interested: every view element has to inherit the `View` class of Android. This class has a method `post()` which accepts a `Runnable`. The passed `Runnable` is then executed in the GUI thread (or main thread). In this mannor it's safe to access the GUI elements from another thread because the actual access happens in the GUI thread._
+_Details for the interested: every view element has to inherit the `View` class of Android. This class has a method `post()` which accepts a `Runnable`. The passed `Runnable` is then executed in the GUI thread (or main thread). In this manor it's safe to access the GUI elements from another thread because the actual access happens in the GUI thread._
