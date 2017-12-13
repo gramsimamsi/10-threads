@@ -13,7 +13,7 @@ package de.fhro.inf.prg3.a10.kitchen {
     }
 
     +class KitchenHatchImpl implements KitchenHatch {
-        +KitchenHatchImpl(maxMeals: int, orders: Dequeue<Order>)
+        +KitchenHatchImpl(maxMeals: int, orders: Deque<Order>)
     }
 }
 
