@@ -44,7 +44,7 @@ _Note that the UML is **not** complete! It's meant for orientation. You will nee
 1. The kitchen hatch is fixed sized to a discrete capacity. If the hatch is full the cooks have to wait until a waiter has removed (dequeued) a dish from the hatch.
 1. If the kitchen hatch is empty a waiter has to wait because it does not know if the cooks are just lazy or if all orders are processed.
 1. When all orders are completed the cooks can go home. The waiters can go home when all orders are completed **and** all dishes are served to the guests.
-1. Use a `Dequeue<>` for storing the dishes (`Dequeue<>` is implemented by `LinkedList<>`). As you might know there are synchronized data structures like `BlockingQueue<>` in the JDK but in this assignment you should make your hands dirty and do the synchronization yourself to understand the concepts so don't use them.
+1. Use a `Deque<>` for storing the dishes (`Deque<>` is implemented by `LinkedList<>`). As you might know there are synchronized data structures like `BlockingQueue<>` in the JDK but in this assignment you should make your hands dirty and do the synchronization yourself to understand the concepts so don't use them.
 
 ## Threads - `Cook` and `Waiter`
 
