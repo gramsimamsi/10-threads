@@ -6,7 +6,10 @@ import android.support.v7.app.AppCompatActivity;
 import java.util.Deque;
 import java.util.LinkedList;
 
+import de.fhro.inf.prg3.a10.kitchen.KitchenHachtImpl;
 import de.fhro.inf.prg3.a10.kitchen.KitchenHatch;
+import de.fhro.inf.prg3.a10.kitchen.workers.Cook;
+import de.fhro.inf.prg3.a10.kitchen.workers.Waiter;
 import de.fhro.inf.prg3.a10.model.Order;
 import de.fhro.inf.prg3.a10.util.NameGenerator;
 
@@ -30,9 +33,9 @@ public class MainActivity extends AppCompatActivity {
             orders.push(new Order(nameGenerator.getDishName()));
         }
 
-        /* TODO initialize the kitchen hatch
+        /* DONE: initialize the kitchen hatch
          * use the constant above to control how many meals may be placed in the hatch */
-        final KitchenHatch kitchenHatch = null;
+        final KitchenHatch kitchenHatch = new KitchenHachtImpl(KITCHEN_HATCH_SIZE, orders);
 
         /* setup progress reporter */
         final ProgressReporter progressReporter = new ProgressReporter.ProgressReporterBuilder()
@@ -52,6 +55,12 @@ public class MainActivity extends AppCompatActivity {
 
 
         /* TODO create the cooks and waiters, pass the kitchen hatch and the reporter instance and start them */
+        for(int i = 0; i < COOKS_COUNT ; i++){
+            new Thread(new Cook(nameGenerator.generateName(), kitchenHatch, progressReporter)).start();
+        }
+        for(int i = 0; i < WAITERS_COUNT; i++){
+            new Thread(new Waiter(nameGenerator.generateName(), kitchenHatch, progressReporter)).start();
+        }
 
     }
 }
